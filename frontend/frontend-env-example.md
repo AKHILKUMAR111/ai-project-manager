@@ -1,0 +1,45 @@
+# Frontend Environment Variables (.env.example)
+
+# API Configuration
+VITE_API_BASE_URL=http://localhost:5000
+VITE_API_TIMEOUT=30000
+
+# WebSocket Configuration
+VITE_SOCKET_URL=http://localhost:5000
+VITE_SOCKET_TIMEOUT=5000
+
+# Application Configuration
+VITE_APP_NAME="AI Project Manager"
+VITE_APP_VERSION=1.0.0
+VITE_APP_DESCRIPTION="AI-Enhanced Project Management with Real-time Collaboration"
+
+# Feature Flags
+VITE_ENABLE_AI_FEATURES=true
+VITE_ENABLE_REAL_TIME=true
+VITE_ENABLE_NOTIFICATIONS=true
+VITE_ENABLE_DARK_MODE=true
+VITE_ENABLE_ANALYTICS=false
+
+# External Services
+VITE_GOOGLE_ANALYTICS_ID=
+VITE_SENTRY_DSN=
+
+# Development Configuration
+VITE_DEBUG_MODE=true
+VITE_MOCK_API=false
+VITE_LOG_LEVEL=info
+
+# UI Configuration
+VITE_DEFAULT_THEME=light
+VITE_DEFAULT_LANGUAGE=en
+VITE_ITEMS_PER_PAGE=10
+VITE_MAX_FILE_UPLOAD_SIZE=10485760
+
+# Performance Configuration
+VITE_ENABLE_SERVICE_WORKER=true
+VITE_CACHE_TIMEOUT=300000
+VITE_DEBOUNCE_DELAY=300
+
+# Security Configuration
+VITE_SESSION_TIMEOUT=3600000
+VITE_IDLE_TIMEOUT=1800000
