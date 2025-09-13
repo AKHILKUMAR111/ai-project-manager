@@ -1,0 +1,123 @@
+{
+  "name": "ai-project-manager-backend",
+  "version": "1.0.0",
+  "description": "Backend API for AI-Enhanced Project Management with real-time features",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "babel src --out-dir dist --copy-files",
+    "test": "jest --verbose --coverage",
+    "test:watch": "jest --watch",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "lint": "eslint src/ --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src/ --ext .js,.jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,json,md}\"",
+    "db:seed": "node scripts/seedDatabase.js",
+    "db:reset": "node scripts/resetDatabase.js",
+    "logs": "tail -f logs/app.log",
+    "prepare": "cd .. && husky install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0",
+    "express-validator": "^7.0.1",
+    "socket.io": "^4.7.2",
+    "redis": "^4.6.7",
+    "@socket.io/redis-adapter": "^8.2.1",
+    "openai": "^4.0.0",
+    "winston": "^3.10.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "express-async-errors": "^3.1.1",
+    "joi": "^17.9.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.4",
+    "crypto": "^1.0.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "nodemon": "^3.0.1",
+    "jest": "^29.6.1",
+    "supertest": "^6.3.3",
+    "cross-env": "^7.0.3",
+    "@types/jest": "^29.5.3"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "mongodb",
+    "socket.io",
+    "jwt",
+    "redis",
+    "openai",
+    "api",
+    "backend"
+  ],
+  "author": "AKHIL KUMAR",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AKHILKUMAR111/ai-project-manager.git",
+    "directory": "backend"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js",
+      "!src/config/*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/?(*.)+(spec|test).js"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "src/public/*",
+      "src/logs/*"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "18"
+          }
+        }
+      ]
+    ]
+  }
+}
